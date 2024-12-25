@@ -56,18 +56,20 @@ int main() {
             }
 
             case 4: {
-                 int largest = -1, secondLargest = -1;  
-                for(int i = 0; i < n; i++) {  
-                    if(arr[i] > largest) {  
-                        secondLargest = largest;  
-                        largest = arr[i];  
-                    } else if(arr[i] > secondLargest && arr[i] < largest) {  
-                        secondLargest = arr[i];  
-                    }  
-                }  
-                printf("Gia tri lon thu 2 trong mang la: %d\n", secondLargest);  
-                break;  
-            } 
+                int smallest = _INT_MAX_, secondSmallest = _INT_MAX_;  
+                for (int i = 0; i < n; i++) {  
+                if (arr[i] < smallest) {  
+             secondSmallest = smallest;  
+             smallest = arr[i];  
+             } else if (arr[i] < secondSmallest && arr[i] > smallest) {  
+            secondSmallest = arr[i];  
+    }  
+}  
+         if (secondSmallest == _INT_MAX_) {  
+          printf("Khong co gia tri nho thu 2 trong mang.\n");  
+         } else {  
+        printf("Gia tri nho thu 2 trong mang la: %d\n", secondSmallest);  
+} 
             case 5: {
                 int value, addIndex;
                 printf("nhap vi tri muon them : ");
