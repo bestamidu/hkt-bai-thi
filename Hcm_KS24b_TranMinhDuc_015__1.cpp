@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <limits.h> /
+
 
 int main() {
     int choice, n = 0, arr[100]; 
@@ -56,26 +56,18 @@ int main() {
             }
 
             case 4: {
-                if (n < 2) {
-                    printf("khong du n de chay");
-                } else {
-                    int smallest = INT_MAX, second_smallest = INT_MAX;
-                    for (int i = 0; i < n; i++) {
-                        if (arr[i] < smallest) {
-                            second_smallest = smallest;
-                            smallest = arr[i];
-                        } else if (arr[i] > smallest && arr[i] < second_smallest) {
-                            second_smallest = arr[i];
-                        }
-                    }
-                    if (second_smallest == INT_MAX) {
-                        printf("khong ton tai vi tri thu 2.\n");
-                    } else {
-                        printf("gia tri nho thu 2 la  %d\n", second_smallest);
-                    }
-                }
-                break;
-            }
+                 int largest = -1, secondLargest = -1;  
+                for(int i = 0; i < n; i++) {  
+                    if(arr[i] > largest) {  
+                        secondLargest = largest;  
+                        largest = arr[i];  
+                    } else if(arr[i] > secondLargest && arr[i] < largest) {  
+                        secondLargest = arr[i];  
+                    }  
+                }  
+                printf("Gia tri lon thu 2 trong mang la: %d\n", secondLargest);  
+                break;  
+            } 
             case 5: {
                 int value, addIndex;
                 printf("nhap vi tri muon them : ");
